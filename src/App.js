@@ -56,7 +56,8 @@ import LLMSummary from "./pages/summary/LLMSummary";
 import Candidatequery from "./pages/CandidateQuery";
 import CandidateAdmin from "./components/usermanagement/CandidatesDashboard";
 import MyPage from "./pages/selectedCandidates";
-
+import Jobs from "./pages/websiteCandidates/jobs";
+import WebCandidates from "./pages/websiteCandidates/websiteAppliedCandidates";
 
 const App = () => {
 
@@ -89,6 +90,9 @@ const App = () => {
         
         {/* Add more routes as needed */}
       <Route path= "/SelectedCandidates" element={<CustomLayout><MyPage/></CustomLayout>}/>
+
+      <Route path="/jobs" element={<CustomLayout><Jobs /></CustomLayout>} />
+      <Route path="/webCandidates" element={<CustomLayout><WebCandidates /></CustomLayout>} />
       </Routes>
     </Router>
     

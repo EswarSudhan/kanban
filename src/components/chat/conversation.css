@@ -25,6 +25,23 @@
   margin-top: 13px;
   margin-bottom: 10px;
 }
+
+.bottom-header-item-container{
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+}
+
+.bottom-header-item{
+  font-weight: normal;
+  font-size: 14px;
+  margin: 0 12px;
+}
+.bottom-header-item1{
+  font-weight: normal;
+  font-size: 14px;
+  
+}
  
 .header {
   flex-grow: 1;

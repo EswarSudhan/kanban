@@ -22,7 +22,7 @@ const ProfileCard = ({ profile, fetchData }) => {
 
   const showModal = async () => {
     try {
-      const response = await axios.get('https://hireflowapidev.focusrtech.com:90/hiring/auth/getListOfRecruiter/');
+      const response = await axios.get('http://172.235.21.99:3105/hiring/auth/getListOfRecruiter/');
       setRecruiters(response.data);
       setIsModalVisible(true);
     } catch (error) {
@@ -46,7 +46,7 @@ const ProfileCard = ({ profile, fetchData }) => {
         "profileId": profile.id,
       };
     //   console.log({"americA":profile.resumeId})
-      await axios.post('https://hireflowapidev.focusrtech.com:90/hiring/auth/assignIndividual', payload);
+      await axios.post('http://172.235.21.99:3105/hiring/auth/assignIndividual', payload);
       message.success('Successfully assigned');
       setIsModalVisible(false);
       fetchData(); // Call fetchData after successful assignment
@@ -63,7 +63,7 @@ const ProfileCard = ({ profile, fetchData }) => {
   const handleDownload = async () => {
     const resumeId = profile.resumeId;
     try {
-      const response = await axios.get(`https://hireflowapidev.focusrtech.com:90/hiring/auth/downloadResume/${resumeId}`, {
+      const response = await axios.get(`http://172.235.21.99:3105/hiring/auth/downloadResume/${resumeId}`, {
         responseType: 'blob',
       });
       const blob = new Blob([response.data], { type: 'application/pdf' });
@@ -94,7 +94,7 @@ const buttonStyle = {
           "profileId": profile.id,
         };
       //   console.log({"americA":profile.resumeId})
-        await axios.post('https://hireflowapidev.focusrtech.com:90/hiring/auth/changestatusAdmin', payload);
+        await axios.post('http://172.235.21.99:3105/hiring/auth/changestatusAdmin', payload);
         message.success('Successfully changed status');
         setIsModalVisible(false);
         fetchData(); // Call fetchData after successful assignment
@@ -178,7 +178,7 @@ export const Candidatecards = ({ selectedFilters, candidateCards }) => {
 
     //     const fetchData = async () => {
     //         try {
-    //             const response = await axios.get('https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/getAllCandidates', {
+    //             const response = await axios.get('http://172.235.21.99:3105/hiring/entryLevel/getAllCandidates', {
     //                 headers: {
     //                     Authorization: `Bearer ${token}`,
     //                 }
@@ -255,7 +255,7 @@ export const Candidatecards = ({ selectedFilters, candidateCards }) => {
 
 //   const showModal = async () => {
 //     try {
-//       const response = await axios.get('https://hireflowapidev.focusrtech.com:90/hiring/auth/getListOfRecruiter/');
+//       const response = await axios.get('http://172.235.21.99:3105/hiring/auth/getListOfRecruiter/');
 //       setRecruiters(response.data);
 //       setIsModalVisible(true);
 //     } catch (error) {
@@ -278,7 +278,7 @@ export const Candidatecards = ({ selectedFilters, candidateCards }) => {
 //         recruiterId: selectedRecruiter,
 //         profileId: profile.id,
 //       };
-//       await axios.post('https://hireflowapidev.focusrtech.com:90/hiring/auth/assignIndividual', payload);
+//       await axios.post('http://172.235.21.99:3105/hiring/auth/assignIndividual', payload);
 //       message.success('Successfully assigned');
 //       setIsModalVisible(false);
 //       fetchData(); // Call fetchData after successful assignment
@@ -295,7 +295,7 @@ export const Candidatecards = ({ selectedFilters, candidateCards }) => {
 //   const handleDownload = async () => {
 //     const resumeId = profile.resumeId;
 //     try {
-//       const response = await axios.get(`https://hireflowapidev.focusrtech.com:90/hiring/auth/downloadResume/${resumeId}`, {
+//       const response = await axios.get(`http://172.235.21.99:3105/hiring/auth/downloadResume/${resumeId}`, {
 //         responseType: 'blob',
 //       });
 //       const blob = new Blob([response.data], { type: 'application/pdf' });

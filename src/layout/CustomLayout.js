@@ -43,7 +43,15 @@ const roles = {
         { key: "evaluation", label: "Admin Evaluation", linkTo: "/evaluation", icon: <FileDoneOutlined /> },
         { key: "summary", label: "Summary", linkTo: "/admin-summary", icon: <ProfileOutlined /> },
         { key: "llmSummary", label: "Query", linkTo: "/llmAdminSummary", icon: <FileSearchOutlined /> },
-        {key: "SelectedCandidates",label: "Selected Candidates", linkTo: "/SelectedCandidates", icon: <FileSearchOutlined /> }
+        { key: "SelectedCandidates", label: "Selected Candidates", linkTo: "/SelectedCandidates", icon: <FileSearchOutlined /> }
+      ],
+    },
+    {
+      key: "Jobs",
+      label: "Jobs",
+      icon: <TeamOutlined />,
+      subMenu: [
+        { key: "createJob", label: "CreateJob", linkTo: "/jobs", icon: <FileDoneOutlined /> },
       ],
     },
   ],
@@ -88,7 +96,7 @@ const roles = {
   ],
 };
 // 
-const CustomLayout = ({state, children }) => {
+const CustomLayout = ({ state, children }) => {
   const [collapsed, setCollapsed] = useState(false);
   const [userRole, setUserRole] = useState("");
 
@@ -103,7 +111,7 @@ const CustomLayout = ({state, children }) => {
   const [role, setRole] = useState("");
   const imgurl2 = process.env.PUBLIC_URL + "./img/frlogo.png";
 
-  
+
 
   const HandlerRole = (jobRole) => {
     if (jobRole === 'ROLE_ADMIN') {
@@ -143,18 +151,18 @@ const CustomLayout = ({state, children }) => {
 
 
   return (
-    <Layout style={{ minHeight: "100vh",  }}>
-       <Sider
-    width={250} // Set the initial width of the Sider
-    collapsedWidth={80} // Set the width of the Sider when collapsed
-    trigger={null} // Hide the default trigger button
-    collapsible
-    collapsed={collapsed}
-    style={{
-      overflow: 'auto',
-      height: '100vh',
-      position: 'fixed',
-      left: 0,
+    <Layout style={{ minHeight: "100vh", }}>
+      <Sider
+        width={250} // Set the initial width of the Sider
+        collapsedWidth={80} // Set the width of the Sider when collapsed
+        trigger={null} // Hide the default trigger button
+        collapsible
+        collapsed={collapsed}
+        style={{
+          overflow: 'auto',
+          height: '100vh',
+          position: 'fixed',
+          left: 0,
 
         }}
 
@@ -244,54 +252,37 @@ const CustomLayout = ({state, children }) => {
 
 
 
-<Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
-  {roles[userRole]?.map((item) => (
-    <React.Fragment key={item.key}>
-      {/* Render General or Candidates as text */}
-      <div style={{ paddingLeft: '10px', paddingTop: '25px', paddingBottom: '8px', color: 'rgba(255, 255, 255, 0.65)', fontSize:'19px', fontWeight:'lighter' }}>
-        {!collapsed && item.icon}
-        <span style={{ marginLeft: '8px' }}>{!collapsed && item.label}</span>
-      </div>
-      
-      {/* Render submenu items */}
-      {/* {item.subMenu && item.subMenu.map((subItem) => (
-        
-        <Menu.Item key={subItem.key} theme="dark" defaultSelectedKeys={["1"]} mode="inline">
-        <Link to={subItem.linkTo}>
-          <div style={{ display: 'flex', alignItems: 'center', fontSize:'1.2em', fontWeight:'lighter' }}>
-            <div style={{ marginRight: '5px' }}><span>{subItem.icon}</span></div> 
-            {!collapsed && <span>{subItem.label}</span>}
+        <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline" style={{ height: '65%', overflow: 'scroll' }}>
+          {roles[userRole]?.map((item) => (
+            <React.Fragment key={item.key}>
+              {/* Render General or Candidates as text */}
+              <div style={{ paddingLeft: '10px', paddingTop: '25px', paddingBottom: '8px', color: 'rgba(255, 255, 255, 0.65)', fontSize: '19px', fontWeight: 'lighter' }}>
+                {!collapsed && item.icon}
+                <span style={{ marginLeft: '8px' }}>{!collapsed && item.label}</span>
+              </div>
+
+              {/* Render submenu items */}
+
+              {item.subMenu && item.subMenu.map((subItem) => (
+                <Menu.Item key={subItem.key} theme="dark" defaultSelectedKeys={["1"]} mode="inline">
+                  <Link to={subItem.linkTo}>
+                    <div style={{ display: 'flex', alignItems: 'center', fontSize: '1.2em', fontWeight: 'lighter' }}>
+                      <div style={{ marginRight: '5px' }}><span>{subItem.icon}</span></div>
+                      {!collapsed && <span>{subItem.label}</span>}
+                    </div>
+                  </Link>
+                </Menu.Item>
+              ))}
+            </React.Fragment>
+          ))}
+        </Menu>
+        {!collapsed && (
+          <div style={{ position: "absolute", bottom: "10px", width: "100%", textAlign: "center", color: "white" }}>
+
+            <h2 style={{ marginLeft: "10px", marginTop: "15px", fontWeight: "initial", fontSize: '15px', color: 'rgb(84, 116, 131)' }}>by FocusR AI</h2>
+            <h2 style={{ marginLeft: "10px", marginTop: "15px", fontSize: '10px', fontWeight: "initial", color: 'rgb(84, 116, 131)' }}>V 0.0.1</h2>
           </div>
-        </Link>
-        
-      </Menu.Item>
-      
-      ))} */}
-      {item.subMenu && item.subMenu.map((subItem) => {
-    console.log({"mass": subItem.linkTo}); // Move console.log outside of the JSX
-
-    return (
-        <Menu.Item key={subItem.key} theme="dark" defaultSelectedKeys={["1"]} mode="inline">
-            <Link to={subItem.linkTo}>
-                <div style={{ display: 'flex', alignItems: 'center', fontSize: '1.2em', fontWeight: 'lighter' }}>
-                    <div style={{ marginRight: '5px' }}><span>{subItem.icon}</span></div>
-                    {!collapsed && <span>{subItem.label}</span>}
-                </div>
-            </Link>
-        </Menu.Item>
-    );
-})}
-
-    </React.Fragment>
-  ))}
-</Menu>
-{!collapsed && (
-    <div style={{ position: "absolute", bottom: "10px", width: "100%", textAlign: "center", color: "white" }}>
-      
-      <h2 style={{ marginLeft: "10px", marginTop: "15px", fontWeight: "initial", fontSize:'15px', color:'rgb(84, 116, 131)' }}>by FocusR AI</h2>
-      <h2 style={{ marginLeft: "10px", marginTop: "15px", fontSize:'10px', fontWeight: "initial", color:'rgb(84, 116, 131)'}}>V 0.0.1</h2>
-    </div>
-  )}
+        )}
 
       </Sider>
       <Layout

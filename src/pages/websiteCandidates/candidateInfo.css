@@ -1,0 +1,46 @@
+.bottom-title {
+    display: flex;
+
+}
+
+.bottom-title p {
+    margin: 2px;
+}
+
+.conversation-avatar-web {
+    padding-left: 0;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 13px;
+    margin-bottom: 10px;
+}
+
+
+
+.info-title1{
+    padding-bottom: 0%;
+    margin: 0;
+    font-weight: bold;
+}
+
+.candidateInfo p{
+    margin: 0;
+    line-height: 1.5rem;
+}
+
+.info-title{
+    font-weight: bold;
+    margin-top: 10px;
+    padding-top: 10px;
+
+}
+
+
+.select-assign{
+    padding: 5px 20px;
+}
+
+.assign-button{
+    margin: 10px 10px;
+    padding: 5px 20px;
+}

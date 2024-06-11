@@ -20,7 +20,7 @@ const LLMSummary = () => {
 
         setLoading(true);
 
-        axios.post('https://hireflowapidev.focusrtech.com:90/hiring/auth/llmSearch', {
+        axios.post('http://172.235.21.99:3105/hiring/auth/llmSearch', {
             query: searchQuery
         })
         .then(response => {
@@ -50,7 +50,7 @@ const LLMSummary = () => {
     const currentItems = responseData.slice(indexOfFirstItem, indexOfLastItem);
 
     const paginate = pageNumber => setCurrentPage(pageNumber);
-''
+
     return (
         <>
             <Usernav />

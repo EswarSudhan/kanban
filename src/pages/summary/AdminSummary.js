@@ -141,7 +141,7 @@ const AdminSummary = () => {
       const filteredData = Object.fromEntries(
         Object.entries(formData).filter(([_, value]) => value !== "")
       );
-      const response = await axios.post('https://hireflowapidev.focusrtech.com:90/hiring/auth/exportSummary', filteredData, {
+      const response = await axios.post('http://172.235.21.99:3105/hiring/auth/exportSummary', filteredData, {
         responseType: 'blob' // Important for handling binary data
       });
 
@@ -183,7 +183,7 @@ const AdminSummary = () => {
     console.log(record.resumeId);
     const resumeId = record.resumeId;
     try {
-      const response = await axios.get(`https://hireflowapidev.focusrtech.com:90/hiring/auth/downloadResume/${resumeId}`, {
+      const response = await axios.get(`http://172.235.21.99:3105/hiring/auth/downloadResume/${resumeId}`, {
         responseType: 'blob',
       });
       console.log(response.headers);

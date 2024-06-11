@@ -1,0 +1,14 @@
+.center-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-column-header{
+    text-align: center;
+}
+
+.assign-button-container{
+    display: flex;
+    flex-direction: row-reverse;
+}

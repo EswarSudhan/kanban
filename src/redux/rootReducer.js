@@ -7,6 +7,7 @@ import kanbanReducer from "../redux/slices/kanbanSlice";
 import interviewerReducer from "../redux/slices/interviewerSlice";
 import searchListReducer from "../redux/slices/searchSlice";
 import summaryReducer from "../redux/slices/summarySlice";
+import webCanReducer from "../redux/slices/webCandidatesSlice";
 // ----------------------------------------------------------------------
 
 const authPersistConfig = {
@@ -48,6 +49,13 @@ const summaryPersistConfig = {
   whitelist: [],
   blacklist: ["isLoading"],
 };
+const webCanPersistConfig = {
+  key: "webcandidate",
+  storage,
+  keyPrefix: "redux-",
+  whitelist: ["jobDetails"],
+  blacklist: ["isLoading"],
+};
 
 const rootReducer = combineReducers({
   auth: persistReducer(authPersistConfig, authReducer),
@@ -55,6 +63,7 @@ const rootReducer = combineReducers({
   interviewer: persistReducer(interviewerPersistConfig, interviewerReducer),
   search: persistReducer(searchListConfig, searchListReducer),
   summary: persistReducer(summaryPersistConfig, summaryReducer),
+  webcandidate: persistReducer(webCanPersistConfig, webCanReducer),
 });
 
 const persistedReducer = persistReducer({ key: "root", storage }, rootReducer);

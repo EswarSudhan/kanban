@@ -30,7 +30,7 @@ const HRRHeader = () => {
     const token = localStorage.getItem("accessToken");
     console.log("Token", token);
     axios
-      .get("https://hireflowapidev.focusrtech.com:90/hiring/auth/getAllRoles", {
+      .get("http://172.235.21.99:3105/hiring/auth/getAllRoles", {
         headers: {
           "Content-Type": "application/json",
           Authorization: "Bearer " + token,
@@ -88,7 +88,7 @@ const HRRHeader = () => {
     };
  
     axios
-      .post("https://hireflowapidev.focusrtech.com:90/hiring/auth/register/", postData, {
+      .post("http://172.235.21.99:3105/hiring/auth/register/", postData, {
         headers: {
           "Content-Type": "application/json",
           Authorization: "Bearer " + localStorage.getItem("accessToken"),

@@ -1,0 +1,141 @@
+
+.pullDraft {
+  display: inline-flex;
+  align-items: center;
+  float: right;
+  margin-top: -30px;
+  margin-right: 30px;
+  border: 1px solid #d9d9d9;
+  padding: 8px 16px;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  font-size: 14px;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, border-color 0.3s;
+  margin-bottom: 0px;
+}
+ 
+.pullDraft:hover {
+  background-color: #e6f7ff;
+  border-color: #91d5ff;
+}
+ 
+.form-row {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+ 
+.form-col {
+  flex: 1;
+}
+ 
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #595959;
+}
+ 
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+ 
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #40a9ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+ 
+.ant-modal-footer .ant-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+ 
+.ant-modal-footer .ant-btn-primary {
+  background-color: #1890ff;
+  border-color: #1890ff;
+}
+ 
+.ant-modal-footer .ant-btn-primary:hover {
+  background-color: #40a9ff;
+  border-color: #40a9ff;
+}
+ 
+.ant-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+ 
+.ant-modal-content {
+  border-radius: 8px;
+  padding: 20px;
+}
+ 
+.ant-modal-header {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+ 
+.ant-modal-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+ 
+.ant-modal-close {
+  top: 20px;
+  right: 20px;
+}
+ 
+.date-picker-container {
+  position: relative;
+  border: none;
+ 
+}
+ 
+
+ 
+.date-picker-container .ant-picker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0px;
+ 
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+ 
+:where(.css-dev-only-do-not-override-1b0bdye).ant-picker .ant-picker-input >input {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  color: inherit;
+  font-size: 14px;
+  line-height: 1.5714285714285714;
+  transition: all 0.2s;
+  flex: auto;
+  min-width: 1px;
+  height: auto;
+  padding: 10px;
+  margin: 0px;
+  background: transparent;
+  border: 0;
+  font-family: inherit;
+}
+ 
+#last-input{
+  margin-bottom: 30px;
+}

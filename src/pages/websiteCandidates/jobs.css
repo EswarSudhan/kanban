@@ -1,0 +1,121 @@
+.search-bar {
+  width: 30%;
+  float: right;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  height: 50%;
+}
+
+.table-container {
+  width: 100%;
+  overflow: scroll;
+  margin: 15px 0;
+}
+
+.breadcrump-container {
+  margin: 20px;
+}
+
+.transparent-row .ant-table-thead > tr > th {
+  background: #F5F5F5 !important;
+  border-bottom: 1px solid rgb(216, 216, 216);
+}
+
+.transparent-row .ant-table-tbody > tr > td {
+  background: #F5F5F5 !important;
+  border-bottom: 1px solid rgb(216, 216, 216);
+}
+
+.transparent-row .ant-table-tbody > tr:hover > td {
+  background: #e7e7e7 !important;
+}
+
+.filter-container {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.sample-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 30px;
+}
+
+.filter-container button {
+  width: 6rem;
+  float: right;
+  margin: 3px 0;
+}
+
+.heading-filter-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.screen-title {
+  margin-left: 12px;
+}
+
+.dropdown-content {
+  max-height: 200px; /* Adjust the max height as needed */
+  overflow-y: auto;
+  border: 1px solid #d9d9d9;
+  background-color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-checkbox-item {
+  margin-bottom: 8px;
+}
+
+.dropdown-checkbox-item:last-child {
+  margin-bottom: 0;
+}
+
+.filter-container button {
+  width: 7rem;
+  float: right;
+  margin: 3px 0;
+}
+
+.custom-search-input .ant-input {
+  padding-right: 30px; /* Adjust padding to make space for the icon */
+}
+
+.custom-search-input .ant-input-affix-wrapper .ant-input-suffix {
+  position: absolute;
+  right: 10px; /* Adjust icon position */
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+:where(.css-dev-only-do-not-override-1b0bdye).ant-input-search > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button:not(.ant-btn-primary) {
+  color: rgba(0, 0, 0, 0.45);
+  display: none;
+}
+
+:where(.css-dev-only-do-not-override-1b0bdye).ant-input-group .ant-input-affix-wrapper:not(:last-child) {
+  border-start-end-radius: 6px;
+  border-end-end-radius: 6px;
+}
+
+.ant-input-search :where(.css-dev-only-do-not-override-1b0bdye).ant-input-group .ant-input-affix-wrapper:not(:last-child):focus + .anticon svg {
+  display: block; /* or display: block; depending on the display type of your icon */
+}
+
+.filter img {
+  margin-top: 2px;
+}
+
+.css-dev-only-do-not-override-1b0bdye.ant-table-wrapper .ant-table-container table > thead > tr:first-child > *:first-child {
+  border-start-start-radius: 8px;
+  background: #F5F5F5 !important; 
+  border-bottom: 1px solid rgb(216, 216, 216);
+}

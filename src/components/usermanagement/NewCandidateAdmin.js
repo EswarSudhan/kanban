@@ -19,7 +19,7 @@
 
 //     const handleAssignConfirmation = async () => {
 //         try {
-//             const apiUrl = "https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/assignRole/";
+//             const apiUrl = "http://172.235.21.99:3105/hiring/entryLevel/assignRole/";
 //             const response = await axios.post(apiUrl);
 //             fetchData();
 //             notification.success({
@@ -39,7 +39,7 @@
 //     const fetchData = async () => {
 //         const token = localStorage.getItem('accessToken');
 //         try {
-//             const response = await axios.get('https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/getAllCandidates', {
+//             const response = await axios.get('http://172.235.21.99:3105/hiring/entryLevel/getAllCandidates', {
 //                 headers: {
 //                     Authorization: `Bearer ${token}`,
 //                 }
@@ -147,7 +147,7 @@ export function Newcandidate() {
 
     const handleAssignConfirmation = async () => {
         try {
-            const apiUrl = "https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/assignRole/";
+            const apiUrl = "http://172.235.21.99:3105/hiring/entryLevel/assignRole/";
             const response = await axios.post(apiUrl);
             fetchData();
             notification.success({
@@ -167,7 +167,7 @@ export function Newcandidate() {
     const fetchData = async () => {
         const token = localStorage.getItem('accessToken');
         try {
-            const response = await axios.get('https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/getAllCandidates', {
+            const response = await axios.get('http://172.235.21.99:3105/hiring/entryLevel/getAllCandidates', {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 }
