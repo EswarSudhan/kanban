@@ -77,7 +77,7 @@ export const updateAdminCandidateDataAsync = createAsyncThunk(
   async (requestData) => {
     try {
       const response = await api.post(
-        `http://172.235.21.99:3105/hiring/auth/updatedataadmin/${requestData.resumeId}`,
+        `https://hireflowapidev.focusrtech.com:90/hiring/auth/updatedataadmin/${requestData.resumeId}`,
         requestData
       );
       return response.data;

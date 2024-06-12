@@ -1,0 +1,22 @@
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+
+  }
+ 
+  .pageTitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+ 
+  .search {
+    width:90%;
+    /* right: 60px; */
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: right;
+    /* margin-right: 10%; */
+  }

@@ -76,7 +76,7 @@
 //     const isActive = selectedUser.is_active;
 //     const id = selectedUser.id;
 //     try {
-//       await axios.put(`http://172.235.21.99:3105/hiring/auth/activeInactiveUser/${id}`, {
+//       await axios.put(`https://hireflowapidev.focusrtech.com:90/hiring/auth/activeInactiveUser/${id}`, {
 //         is_active: !isActive
 //       });
 //       fetchData();
@@ -90,7 +90,7 @@
 //     const id = selectedUser.id;
 //     const isPause = selectedUser.pause;
 //     try {
-//       await axios.put(`http://172.235.21.99:3105/hiring/auth/pauseResumeUser/${id}`, {
+//       await axios.put(`https://hireflowapidev.focusrtech.com:90/hiring/auth/pauseResumeUser/${id}`, {
 //         pause: !isPause
 //       });
 //       fetchData();
@@ -102,7 +102,7 @@
 
 //   const handleCountHrUser = async (empId) => {
 //     try {
-//       const response = await axios.get(`http://172.235.21.99:3105/hiring/auth/statsofhr/${empId}`);
+//       const response = await axios.get(`https://hireflowapidev.focusrtech.com:90/hiring/auth/statsofhr/${empId}`);
 //       setHrCount(response.data);
 //     } catch (error) {
 //       console.error("Error fetching HR count:", error.message);
@@ -191,7 +191,7 @@ const HRRContainer = ({ users1, fetchData }) => {
     const isActive = selectedUser.is_active;
     const id = selectedUser.id;
     try {
-      await axios.put(`http://172.235.21.99:3105/hiring/auth/activeInactiveUser/${id}`, {
+      await axios.put(`https://hireflowapidev.focusrtech.com:90/hiring/auth/activeInactiveUser/${id}`, {
         is_active: !isActive
       });
       fetchData();
@@ -205,7 +205,7 @@ const HRRContainer = ({ users1, fetchData }) => {
     const id = selectedUser.id;
     const isPause = selectedUser.pause;
     try {
-      await axios.put(`http://172.235.21.99:3105/hiring/auth/pauseResumeUser/${id}`, {
+      await axios.put(`https://hireflowapidev.focusrtech.com:90/hiring/auth/pauseResumeUser/${id}`, {
         pause: !isPause
       });
       fetchData();
@@ -217,7 +217,7 @@ const HRRContainer = ({ users1, fetchData }) => {
 
   const handleCountHrUser = async (empId) => {
     try {
-      const response = await axios.get(`http://172.235.21.99:3105/hiring/auth/statsofhr/${empId}`);
+      const response = await axios.get(`https://hireflowapidev.focusrtech.com:90/hiring/auth/statsofhr/${empId}`);
       setHrCount(response.data);
     } catch (error) {
       console.error("Error fetching HR count:", error.message);
@@ -236,7 +236,7 @@ const HRRContainer = ({ users1, fetchData }) => {
   const handleEditSave = async () => {
     const id = selectedUser.id;
     try {
-      await axios.post(`http://172.235.21.99:3105/hiring/auth/updateUser/${id}/`, {
+      await axios.post(`https://hireflowapidev.focusrtech.com:90/hiring/auth/updateUser/${id}/`, {
        
         username: editUser.name,
         email: editUser.email,
@@ -257,7 +257,7 @@ const HRRContainer = ({ users1, fetchData }) => {
   const hrrUsers = users1.filter((user) => user.roles === 2);
 
   return (
-    <div className="container">
+    <div className="containerhrr">
       {hrrUsers.map((user) => (
         <UserCard key={user.id} user={user} onClick={handleCardClick} />
       ))}

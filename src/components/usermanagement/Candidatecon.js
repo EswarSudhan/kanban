@@ -74,7 +74,7 @@ const Candidatecon = () => {
     const fetchUsers = async () => {
       try {
         const response = await axios.get(
-          "http://172.235.21.99:3105/hiring/entryLevel/getAllCandidates",
+          "https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/getAllCandidates",
           {
             headers: {
               "Content-Type": "application/json",
@@ -131,3 +131,136 @@ const Candidatecon = () => {
 };
 
 export default Candidatecon;
+
+
+// import React, { useState, useEffect } from "react";
+// import axios from "axios";
+// import { Table, Modal, Button } from 'antd';
+// // import { BarChartOutlined, WorkOutlineOutlined, PhoneOutlined, VerifiedOutlined } from '@ant-design/icons';
+// import './hrrcontainer.css';
+
+// const UserDetailsModal = ({ user, onClose, onDelete }) => {
+//   return (
+//     <Modal
+//       title="User Details"
+//       visible={!!user}
+//       onCancel={onClose}
+//       footer={null}
+//       width={'20%'}
+//     >
+//       {user && (
+//         <div>
+//           <p>Name: {user.name}</p>
+//           <p>Job Role: {user.jobRole}</p>
+//           <p>Score: {user.resumeScore}</p>
+//           <p>Verified: {user.Verified}</p>
+//           <p>Experience: {user.yearsOfExperience}</p>
+//           <div className="button-container">
+//             <Button type="primary" onClick={onDelete}>Delete</Button>
+//             <Button type="default">Pause</Button>
+//           </div>
+//           <div style={{ marginTop: '10px' }}>
+//             <BarChartIcon /> Show Analytics
+//           </div>
+//         </div>
+//       )}
+//     </Modal>
+//   );
+// };
+
+// const Candidatecon = () => {
+//   const [users, setUsers] = useState([]);
+//   const [selectedUser, setSelectedUser] = useState(null);
+
+//   useEffect(() => {
+//     const token = localStorage.getItem("accessToken");
+//     const fetchUsers = async () => {
+//       try {
+//         const response = await axios.get(
+//           "https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/getAllCandidates",
+//           {
+//             headers: {
+//               "Content-Type": "application/json",
+//               Authorization: "Bearer " + token,
+//             },
+//           }
+//         );
+//         setUsers(response.data);
+//       } catch (error) {
+//         console.error("Failed to fetch users:", error.message);
+//       }
+//     };
+
+//     fetchUsers();
+//   }, []);
+
+//   const handleRowClick = (user) => {
+//     setSelectedUser(user);
+//   };
+
+//   const handleCloseModal = () => {
+//     setSelectedUser(null);
+//   };
+
+//   const handleDeleteUser = () => {
+//     console.log("Deleting user:", selectedUser);
+//     handleCloseModal();
+//   };
+
+//   const columns = [
+//     {
+//       title: 'Avatar',
+//       dataIndex: 'avatar',
+//       key: 'avatar',
+//       render: () => <img className="avatar" src={process.env.PUBLIC_URL + "./img/avtr3.jpg"} alt="User Avatar" />
+//     },
+//     {
+//       title: 'Name',
+//       dataIndex: 'name',
+//       key: 'name',
+//     },
+//     {
+//       title: 'Job Role',
+//       dataIndex: 'jobRole',
+//       key: 'jobRole',
+//       render: text => <span><WorkOutlineIcon style={{ color: "rgb(88, 167, 204)" }} /> {text}</span>
+//     },
+//     {
+//       title: 'Experience',
+//       dataIndex: 'yearsOfExperience',
+//       key: 'yearsOfExperience',
+//       render: text => <span><BeenhereIcon style={{ color: "rgb(88, 167, 204)" }} /> {text} {text === '1' ? "year" : "years"}</span>
+//     },
+//     {
+//       title: 'Phone Number',
+//       dataIndex: 'phoneNo',
+//       key: 'phoneNo',
+//       render: text => <span><LocalPhoneIcon style={{ color: "rgb(88, 167, 204)" }} /> {text}</span>
+//     },
+//     {
+//       title: 'Resume Score',
+//       dataIndex: 'resumeScore',
+//       key: 'resumeScore',
+//     }
+//   ];
+
+//   return (
+//     <div className="container">
+//       <Table
+//         dataSource={users}
+//         columns={columns}
+//         rowKey="id"
+//         onRow={(record) => ({
+//           onClick: () => handleRowClick(record),
+//         })}
+//       />
+//       <UserDetailsModal
+//         user={selectedUser}
+//         onClose={handleCloseModal}
+//         onDelete={handleDeleteUser}
+//       />
+//     </div>
+//   );
+// };
+
+// export default Candidatecon;

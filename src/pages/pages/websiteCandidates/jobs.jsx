@@ -76,7 +76,7 @@ const Jobs = () => {
           Authorization: `Bearer ${accessToken}`
         }
       };
-      selectedRows && axios.delete(`http://172.235.21.99:3105/hiring/entryLevel/postJob/${selectedRows.id}`, config)
+      selectedRows && axios.delete(`https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/postJob/${selectedRows.id}`, config)
         .then(response => {
           console.log('Deleted Successfully');
           setJobCreated(!jobCreated);
@@ -140,7 +140,7 @@ const Jobs = () => {
         }
       };
 
-      axios.get('http://172.235.21.99:3105/hiring/entryLevel/postJob', config)
+      axios.get('https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/postJob', config)
         .then(response => {
           setDataSource(response.data);
         })
@@ -259,7 +259,7 @@ const Jobs = () => {
       isActive: true
     };
 
-    axios.put(`http://172.235.21.99:3105/hiring/entryLevel/postJob/${selectedRows.id}`, payload)
+    axios.put(`https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/postJob/${selectedRows.id}`, payload)
       .then(response => {
         console.log('Response:', response.data);
         showeditModal();
@@ -280,7 +280,7 @@ const Jobs = () => {
       isActive: false
     };
 
-    axios.put(`http://172.235.21.99:3105/hiring/entryLevel/postJob/${selectedRows.id}`, payload)
+    axios.put(`https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/postJob/${selectedRows.id}`, payload)
       .then(response => {
 
         setJobCreated(!jobCreated);

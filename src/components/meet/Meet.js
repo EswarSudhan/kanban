@@ -110,7 +110,7 @@ export default function Meeting({ onSave, prevData }) {
         }
         try {
             const response = await axios.post(
-                "http://172.235.21.99:3105/hiring/entryLevel/createMeeting/", meeting,
+                "https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/createMeeting/", meeting,
                 {
                     headers: {
                         "Content-Type": "application/json",

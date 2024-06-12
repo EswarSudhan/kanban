@@ -10,7 +10,7 @@ const UserTable = () => {
     const fetchUsers = async () => {
       try {
         const response = await axios.get(
-          "http://172.235.21.99:3105/hiring/auth/getAllUsers",
+          "https://hireflowapidev.focusrtech.com:90/hiring/auth/getAllUsers",
           {
                       headers: {
                         "Content-Type": "application/json",

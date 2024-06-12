@@ -10,6 +10,7 @@ const customLabels = {
   'Oracle HRMS consultant': 'Orc HRMS',
   'Oracle SCM consultant': 'Orc SCM',
   'Fresher': 'Fresher',
+  'Oracle Finance - Domain Trainee' : 'Orc Finance Trainee'
 
 };
 

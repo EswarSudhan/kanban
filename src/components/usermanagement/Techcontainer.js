@@ -29,7 +29,7 @@ const Techcontainer = ({ users, fetchData }) => {
 
     try {
       const response = await axios.get(
-        `http://172.235.21.99:3105/hiring/auth/statsofinterviewer/${empId}`
+        `https://hireflowapidev.focusrtech.com:90/hiring/auth/statsofinterviewer/${empId}`
       );
       setHrCount(response.data);
     } catch (error) {
@@ -49,7 +49,7 @@ const Techcontainer = ({ users, fetchData }) => {
     const id = selectedUser.id;
     try {
       await axios.put(
-        `http://172.235.21.99:3105/hiring/auth/activeInactiveUser/${id}`,
+        `https://hireflowapidev.focusrtech.com:90/hiring/auth/activeInactiveUser/${id}`,
         {
           is_active: !is_active,
         }
@@ -72,7 +72,7 @@ const Techcontainer = ({ users, fetchData }) => {
       <div className="header">
         <h2>Technical Interviewer</h2>
       </div>
-      <div className="container">
+      <div className="containerhrr">
         {hrrUsers.map((user) => (
           <UserCard key={user.id} user={user} onClick={handleCardClick} hrCount={hrCount} />
         ))}

@@ -76,7 +76,7 @@ const Jobs = () => {
           Authorization: `Bearer ${accessToken}`
         }
       };
-      selectedRows && axios.delete(`http://172.235.21.99:3105/hiring/entryLevel/postJob/${selectedRows.id}`, config)
+      selectedRows && axios.delete(`https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/postJob/${selectedRows.id}`, config)
         .then(response => {
           console.log('Deleted Successfully');
           setJobCreated(!jobCreated);
@@ -140,7 +140,7 @@ const Jobs = () => {
         }
       };
 
-      axios.get('http://172.235.21.99:3105/hiring/entryLevel/postJob', config)
+      axios.get('https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/postJob', config)
         .then(response => {
           setDataSource(response.data);
         })
@@ -199,6 +199,13 @@ const Jobs = () => {
       dataIndex: 'id',
       key: 'jobId',
       sorter: (a, b) => a.id - b.id,
+      onCell: (record) => ({
+        onClick: () => {
+          console.log('record here', record)
+          navigate('/webCandidates', { state: { jobId: record.id, jobTitle: record.jobTitle } });
+        },
+        style: { cursor: 'pointer' }
+      })
     },
     {
       title: 'Role',
@@ -217,18 +224,39 @@ const Jobs = () => {
       dataIndex: 'jobCreationDate',
       key: 'creationDate',
       sorter: (a, b) => moment(a.creationDate, 'DD-MM-YYYY') - moment(b.creationDate, 'DD-MM-YYYY'),
+      onCell: (record) => ({
+        onClick: () => {
+          console.log('record here', record)
+          navigate('/webCandidates', { state: { jobId: record.id, jobTitle: record.jobTitle } });
+        },
+        style: { cursor: 'pointer' }
+      })
     },
     {
       title: 'Set Expiry',
       dataIndex: 'expiryDate',
       key: 'setExpiry',
       sorter: (a, b) => moment(a.expiryDate, 'DD-MM-YYYY') - moment(b.expiryDate, 'DD-MM-YYYY'),
+      onCell: (record) => ({
+        onClick: () => {
+          console.log('record here', record)
+          navigate('/webCandidates', { state: { jobId: record.id, jobTitle: record.jobTitle } });
+        },
+        style: { cursor: 'pointer' }
+      })
     },
     {
       title: 'Experience',
       dataIndex: 'experience',
       key: 'experience',
       sorter: (a, b) => a.experience - b.experience,
+      onCell: (record) => ({
+        onClick: () => {
+          console.log('record here', record)
+          navigate('/webCandidates', { state: { jobId: record.id, jobTitle: record.jobTitle } });
+        },
+        style: { cursor: 'pointer' }
+      })
     },
   ];
 
@@ -259,7 +287,7 @@ const Jobs = () => {
       isActive: true
     };
 
-    axios.put(`http://172.235.21.99:3105/hiring/entryLevel/postJob/${selectedRows.id}`, payload)
+    axios.put(`https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/postJob/${selectedRows.id}`, payload)
       .then(response => {
         console.log('Response:', response.data);
         showeditModal();
@@ -280,7 +308,7 @@ const Jobs = () => {
       isActive: false
     };
 
-    axios.put(`http://172.235.21.99:3105/hiring/entryLevel/postJob/${selectedRows.id}`, payload)
+    axios.put(`https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/postJob/${selectedRows.id}`, payload)
       .then(response => {
 
         setJobCreated(!jobCreated);
