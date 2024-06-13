@@ -22,7 +22,7 @@
 
 //   const showModal = async () => {
 //     try {
-//       const response = await axios.get('https://hireflowapidev.focusrtech.com:90/hiring/auth/getListOfRecruiter/');
+//       const response = await axios.get('https://hireflowapi.focusrtech.com:90/hiring/auth/getListOfRecruiter/');
 //       setRecruiters(response.data);
 //       setIsModalVisible(true);
 //     } catch (error) {
@@ -46,7 +46,7 @@
 //         "profileId": profile.id,
 //       };
 //     //   console.log({"americA":profile.resumeId})
-//       await axios.post('https://hireflowapidev.focusrtech.com:90/hiring/auth/assignIndividual', payload);
+//       await axios.post('https://hireflowapi.focusrtech.com:90/hiring/auth/assignIndividual', payload);
 //       message.success('Successfully assigned');
 //       setIsModalVisible(false);
 //       fetchData(); // Call fetchData after successful assignment
@@ -63,7 +63,7 @@
 //   const handleDownload = async () => {
 //     const resumeId = profile.resumeId;
 //     try {
-//       const response = await axios.get(`https://hireflowapidev.focusrtech.com:90/hiring/auth/downloadResume/${resumeId}`, {
+//       const response = await axios.get(`https://hireflowapi.focusrtech.com:90/hiring/auth/downloadResume/${resumeId}`, {
 //         responseType: 'blob',
 //       });
 //       const blob = new Blob([response.data], { type: 'application/pdf' });
@@ -94,7 +94,7 @@
 //           "profileId": profile.id,
 //         };
 //       //   console.log({"americA":profile.resumeId})
-//         await axios.post('https://hireflowapidev.focusrtech.com:90/hiring/auth/changestatusAdmin', payload);
+//         await axios.post('https://hireflowapi.focusrtech.com:90/hiring/auth/changestatusAdmin', payload);
 //         message.success('Successfully changed status');
 //         setIsModalVisible(false);
 //         fetchData(); // Call fetchData after successful assignment
@@ -190,7 +190,7 @@
 
 //   const showModal = async (profile) => {
 //     try {
-//       const response = await axios.get('https://hireflowapidev.focusrtech.com:90/hiring/auth/getListOfRecruiter/');
+//       const response = await axios.get('https://hireflowapi.focusrtech.com:90/hiring/auth/getListOfRecruiter/');
 //       setRecruiters(response.data);
 //       setSelectedProfile(profile);
 //       setIsModalVisible(true);
@@ -214,7 +214,7 @@
 //         recruiterId: selectedRecruiter,
 //         profileId: selectedProfile.id,
 //       };
-//       await axios.post('https://hireflowapidev.focusrtech.com:90/hiring/auth/assignIndividual', payload);
+//       await axios.post('https://hireflowapi.focusrtech.com:90/hiring/auth/assignIndividual', payload);
 //       message.success('Successfully assigned');
 //       setIsModalVisible(false);
 //       fetchData();
@@ -226,7 +226,7 @@
 
 //   const handleDownload = async (resumeId) => {
 //     try {
-//       const response = await axios.get(`https://hireflowapidev.focusrtech.com:90/hiring/auth/downloadResume/${resumeId}`, {
+//       const response = await axios.get(`https://hireflowapi.focusrtech.com:90/hiring/auth/downloadResume/${resumeId}`, {
 //         responseType: 'blob',
 //       });
 //       const blob = new Blob([response.data], { type: 'application/pdf' });
@@ -245,7 +245,7 @@
 //         status: status,
 //         profileId: selectedProfile.id,
 //       };
-//       await axios.post('https://hireflowapidev.focusrtech.com:90/hiring/auth/changestatusAdmin', payload);
+//       await axios.post('https://hireflowapi.focusrtech.com:90/hiring/auth/changestatusAdmin', payload);
 //       message.success('Successfully changed status');
 //       setIsModalVisible(false);
 //       fetchData();
@@ -367,7 +367,7 @@
 
 //   const showModal = async (profile) => {
 //     try {
-//         const response = await axios.get('https://hireflowapidev.focusrtech.com:90/hiring/auth/getListOfRecruiter/');
+//         const response = await axios.get('https://hireflowapi.focusrtech.com:90/hiring/auth/getListOfRecruiter/');
 //         setRecruiters(response.data);
 //         setSelectedProfile(profile); // Set selectedProfile here
 //         setIsModalVisible(true);
@@ -392,7 +392,7 @@
 //         "recruiterId": selectedRecruiter,
 //         "profileId": selectedProfile.id,
 //       };
-//       await axios.post('https://hireflowapidev.focusrtech.com:90/hiring/auth/assignIndividual', payload);
+//       await axios.post('https://hireflowapi.focusrtech.com:90/hiring/auth/assignIndividual', payload);
 //       console.log({"america":selectedProfile})
 //       message.success('Successfully assigned');
 //       setIsModalVisible(false);
@@ -413,7 +413,7 @@
 //   //       "profileId": profile.id,
 //   //     };
 //   //   //   console.log({"americA":profile.resumeId})
-//   //     await axios.post('https://hireflowapidev.focusrtech.com:90/hiring/auth/assignIndividual', payload);
+//   //     await axios.post('https://hireflowapi.focusrtech.com:90/hiring/auth/assignIndividual', payload);
 //   //     message.success('Successfully assigned');
 //   //     setIsModalVisible(false);
 //   //     fetchData(); // Call fetchData after successful assignment
@@ -426,7 +426,7 @@
 
 //   const handleDownload = async (resumeId) => {
 //     try {
-//       const response = await axios.get(`https://hireflowapidev.focusrtech.com:90/hiring/auth/downloadResume/${resumeId}`, {
+//       const response = await axios.get(`https://hireflowapi.focusrtech.com:90/hiring/auth/downloadResume/${resumeId}`, {
 //         responseType: 'blob',
 //       });
 //       const blob = new Blob([response.data], { type: 'application/pdf' });
@@ -445,7 +445,7 @@
 //         status: status,
 //         profileId: selectedProfile.id,
 //       };
-//       await axios.post('https://hireflowapidev.focusrtech.com:90/hiring/auth/changestatusAdmin', payload);
+//       await axios.post('https://hireflowapi.focusrtech.com:90/hiring/auth/changestatusAdmin', payload);
 //       message.success('Successfully changed status');
 //       setIsModalVisible(false);
 //     } catch (error) {
@@ -563,7 +563,7 @@
 
 //     //     const fetchData = async () => {
 //     //         try {
-//     //             const response = await axios.get('https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/getAllCandidates', {
+//     //             const response = await axios.get('https://hireflowapi.focusrtech.com:90/hiring/entryLevel/getAllCandidates', {
 //     //                 headers: {
 //     //                     Authorization: `Bearer ${token}`,
 //     //                 }
@@ -627,21 +627,242 @@
 // };
 
 
+
+
+
+// import React, { useEffect, useState } from "react";
+// import './NewCandidateCards.css';
+// import axios from 'axios';
+// import { Table, message, Button, Modal, Select, Tooltip, Flex } from 'antd';
+// import { DownloadOutlined, UserOutlined } from '@ant-design/icons';
+ 
+// const ProfileCard = ({ profile, fetchData }) => {  // Remove fetchData from props
+//   const [isModalVisible, setIsModalVisible] = useState(false);
+//   const [recruiters, setRecruiters] = useState([]);
+//   const [selectedRecruiter, setSelectedRecruiter] = useState(null);
+//   const [selectedProfile, setSelectedProfile] = useState(null);
+ 
+//   const showModal = async (profile) => {
+//     try {
+//         const response = await axios.get('https://hireflowapi.focusrtech.com:90/hiring/auth/getListOfRecruiter/');
+//         setRecruiters(response.data);
+//         setSelectedProfile(profile); // Set selectedProfile here
+//         setIsModalVisible(true);
+//     } catch (error) {
+//         console.error('Failed to fetch recruiters:', error);
+//         message.error('Failed to fetch recruiters');
+//     }
+// };
+ 
+ 
+//   const handleCancel = () => {
+//     setIsModalVisible(false);
+//   };
+ 
+//   const handleSave = async () => {
+//     if (!selectedRecruiter) {
+//       message.error('Please select a recruiter');
+//       return;
+//     }
+//     try {
+//       const payload = {
+//         "recruiterId": selectedRecruiter,
+//         "profileId": selectedProfile.id,
+//       };
+//       await axios.post('https://hireflowapi.focusrtech.com:90/hiring/auth/assignIndividual', payload);
+//       console.log({"america":selectedProfile})
+//       message.success('Successfully assigned');
+//       setIsModalVisible(false);
+//     } catch (error) {
+//       console.error('Failed to assign:', error);
+//       message.error('Failed to assign');
+//     }
+//   };
+ 
+//   // const handleSave = async (param) => {
+//   //   if (!selectedRecruiter) {
+//   //     message.error('Please select a recruiter');
+//   //     return;
+//   //   }
+//   //   try {
+//   //     const payload = {
+//   //       "recruiterId": selectedRecruiter,
+//   //       "profileId": profile.id,
+//   //     };
+//   //   //   console.log({"americA":profile.resumeId})
+//   //     await axios.post('https://hireflowapi.focusrtech.com:90/hiring/auth/assignIndividual', payload);
+//   //     message.success('Successfully assigned');
+//   //     setIsModalVisible(false);
+//   //     fetchData(); // Call fetchData after successful assignment
+//   //   } catch (error) {
+//   //     console.error('Failed to assign:', error);
+//   //   //   message.error('Failed to assign');
+//   //   }
+//   // };
+ 
+ 
+//   const handleDownload = async (resumeId) => {
+//     try {
+//       const response = await axios.get(`https://hireflowapi.focusrtech.com:90/hiring/auth/downloadResume/${resumeId}`, {
+//         responseType: 'blob',
+//       });
+//       const blob = new Blob([response.data], { type: 'application/pdf' });
+//       const url = window.URL.createObjectURL(blob);
+//       window.open(url, '_blank');
+//       window.URL.revokeObjectURL(url);
+//     } catch (error) {
+//       message.error('File not found!');
+//       console.error('Error downloading file:', error);
+//     }
+//   };
+ 
+//   const handleStatusChange = async (status) => {
+//     try {
+//       const payload = {
+//         status: status,
+//         profileId: selectedProfile.id,
+//       };
+//       await axios.post('https://hireflowapi.focusrtech.com:90/hiring/auth/changestatusAdmin', payload);
+//       message.success('Successfully changed status');
+//       setIsModalVisible(false);
+//     } catch (error) {
+//       console.error('Failed to change status:', error);
+//       message.error('Failed to change status');
+//     }
+//   };
+ 
+//   const columns = [
+//     {
+//       title: 'resume Id',
+//       dataIndex: 'resumeId',
+//       key: 'id',
+//       sorter: (a, b) => a.id - b.id,
+//     },
+//     {
+//       title: 'Name',
+//       dataIndex: 'name',
+//       key: 'name',
+//       sorter: (a, b) => a.name.localeCompare(b.name),
+//     },
+//     {
+//       title: 'Experience',
+//       dataIndex: 'experience',
+//       key: 'experience',
+//       render: text => `${text} years`,
+//       sorter :(a, b) => {
+//         const expA = a.experienc
+//         const expB = b.experience
+//         return expA - expB
+//       }
+//     },
+//     {
+//       title: 'Job Role',
+//       dataIndex: 'jobRole',
+//       key: 'jobRole',
+//       sorter: (a, b) => a.jobRole.localeCompare(b.jobRole),
+//     },
+//     {
+//       title: 'AI Score',
+//       dataIndex: 'aiScore',
+//       key: 'aiScore',
+//       sorter: (a, b) => a.aiScore - b.aiScore,
+//     },
+//     {
+//       title: 'Download',
+//       key: 'download',
+//       render: (text, record) => (
+//         <Tooltip title="Download Resume">
+//           <DownloadOutlined
+//             style={{ fontSize: '20px', cursor: 'pointer' }}
+//             onClick={() => handleDownload(record.resumeId)}
+//           />
+//         </Tooltip>
+//       ),
+//     },
+//     {
+//       title: 'Options',
+//       key: 'options',
+//       render: (text, record) => (
+//         <Button type="primary" onClick={() => showModal(record)}>
+//           Options
+//         </Button>
+//       ),
+//     },
+//     {
+//       title: 'Status',
+//       dataIndex: 'status',
+//       key: 'status',
+//       render: text => text === "NOT_ASSIGNED" ? "Not Assigned" : "On Hold",
+//       sorter: (a, b) => {
+//         const statusA = a.status
+//         const statusB = b.status
+//         return statusA.localeCompare(statusB);
+//       },
+//     }
+//   ];
+ 
+//   return (
+//     <div style={{ display: "flex", justifyContent: "center", width: "100%", marginTop: "20px" }}>
+//       <div style={{ width: "90%" }}>
+//         <Table
+//           dataSource={Array.isArray(profile) ? profile : []}  // Ensure profile is an array
+//           columns={columns}
+//           rowKey="id"
+//         />
+//         <Modal
+//           title="Assign Task"
+//           visible={isModalVisible}
+//           onCancel={handleCancel}
+//           footer={[
+//             <Button key="back" onClick={handleCancel}>
+//               Cancel
+//             </Button>,
+//             <Button key="submit" type="primary" onClick={handleSave}>
+//               Assign
+//             </Button>,
+//             <Button type="primary" onClick={() => handleStatusChange('INITIAL_ON_HOLD')}>On Hold</Button>,
+//             <Button type="primary" onClick={() => handleStatusChange('REJECTED')}>Reject</Button>,
+//           ]}
+//         >
+//           <Select
+//             style={{ width: '100%' }}
+//             placeholder="Select a recruiter"
+//             onChange={(value) => setSelectedRecruiter(value)}
+//           >
+//             {recruiters.map(recruiter => (
+//               <Select.Option key={recruiter.id} value={recruiter.id}>
+//                 {recruiter.username}
+//               </Select.Option>
+//             ))}
+//           </Select>
+//         </Modal>
+//       </div>
+//     </div>
+//   );
+// };
+ 
+// export default ProfileCard;
+
+
+
 import React, { useEffect, useState } from "react";
 import './NewCandidateCards.css';
 import axios from 'axios';
-import { Table, message, Button, Modal, Select, Tooltip, Flex } from 'antd';
+import { Table, message, Button, Modal, Select, Tooltip } from 'antd';
 import { DownloadOutlined, UserOutlined } from '@ant-design/icons';
+import { useSelector, useDispatch } from '../../redux/store'; // Import from the correct location
+import { setExampleState, clearExampleState } from '../../redux/slices/newCanSlice';
  
-const ProfileCard = ({ profile, fetchData }) => {  // Remove fetchData from props
+const ProfileCard = ({ profile, fetchData }) => {  // Accept fetchData as a prop
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [recruiters, setRecruiters] = useState([]);
   const [selectedRecruiter, setSelectedRecruiter] = useState(null);
   const [selectedProfile, setSelectedProfile] = useState(null);
+  const dispatch = useDispatch();
  
   const showModal = async (profile) => {
     try {
-        const response = await axios.get('https://hireflowapidev.focusrtech.com:90/hiring/auth/getListOfRecruiter/');
+        const response = await axios.get('https://hireflowapi.focusrtech.com:90/hiring/auth/getListOfRecruiter/');
         setRecruiters(response.data);
         setSelectedProfile(profile); // Set selectedProfile here
         setIsModalVisible(true);
@@ -656,6 +877,27 @@ const ProfileCard = ({ profile, fetchData }) => {  // Remove fetchData from prop
     setIsModalVisible(false);
   };
  
+  // const handleSave = async () => {
+  //   if (!selectedRecruiter) {
+  //     message.error('Please select a recruiter');
+  //     return;
+  //   }
+  //   try {
+  //     const payload = {
+  //       "recruiterId": selectedRecruiter,
+  //       "profileId": selectedProfile.id,
+  //     };
+  //     await axios.post('https://hireflowapi.focusrtech.com:90/hiring/auth/assignIndividual', payload);
+  //     message.success('Successfully assigned');
+  //     dispatch(setExampleState());
+  //     setIsModalVisible(false);
+  //     fetchData();  // Call fetchData after successful assignment
+  //   } catch (error) {
+  //     console.error('Failed to assign:', error);
+  //     message.error('Failed to assign');
+  //   }
+  // };
+
   const handleSave = async () => {
     if (!selectedRecruiter) {
       message.error('Please select a recruiter');
@@ -666,41 +908,26 @@ const ProfileCard = ({ profile, fetchData }) => {  // Remove fetchData from prop
         "recruiterId": selectedRecruiter,
         "profileId": selectedProfile.id,
       };
-      await axios.post('https://hireflowapidev.focusrtech.com:90/hiring/auth/assignIndividual', payload);
-      console.log({"america":selectedProfile})
+      await axios.post('https://hireflowapi.focusrtech.com:90/hiring/auth/assignIndividual', payload);
       message.success('Successfully assigned');
+      
+      // Execute dispatch after 2 seconds
+      setTimeout(() => {
+        dispatch(setExampleState());
+      }, 2000);
+  
       setIsModalVisible(false);
+      fetchData();  // Call fetchData after successful assignment
     } catch (error) {
       console.error('Failed to assign:', error);
-      message.error('Failed to assign');
+      // message.error('Failed to assign');
     }
   };
- 
-  // const handleSave = async (param) => {
-  //   if (!selectedRecruiter) {
-  //     message.error('Please select a recruiter');
-  //     return;
-  //   }
-  //   try {
-  //     const payload = {
-  //       "recruiterId": selectedRecruiter,
-  //       "profileId": profile.id,
-  //     };
-  //   //   console.log({"americA":profile.resumeId})
-  //     await axios.post('https://hireflowapidev.focusrtech.com:90/hiring/auth/assignIndividual', payload);
-  //     message.success('Successfully assigned');
-  //     setIsModalVisible(false);
-  //     fetchData(); // Call fetchData after successful assignment
-  //   } catch (error) {
-  //     console.error('Failed to assign:', error);
-  //   //   message.error('Failed to assign');
-  //   }
-  // };
- 
+  
  
   const handleDownload = async (resumeId) => {
     try {
-      const response = await axios.get(`https://hireflowapidev.focusrtech.com:90/hiring/auth/downloadResume/${resumeId}`, {
+      const response = await axios.get(`https://hireflowapi.focusrtech.com:90/hiring/auth/downloadResume/${resumeId}`, {
         responseType: 'blob',
       });
       const blob = new Blob([response.data], { type: 'application/pdf' });
@@ -719,12 +946,18 @@ const ProfileCard = ({ profile, fetchData }) => {  // Remove fetchData from prop
         status: status,
         profileId: selectedProfile.id,
       };
-      await axios.post('https://hireflowapidev.focusrtech.com:90/hiring/auth/changestatusAdmin', payload);
+      await axios.post('https://hireflowapi.focusrtech.com:90/hiring/auth/changestatusAdmin', payload);
       message.success('Successfully changed status');
+
+      setTimeout(() => {
+        dispatch(setExampleState());
+      }, 2000);
+
       setIsModalVisible(false);
+      fetchData();  // Call fetchData after successful status change
     } catch (error) {
       console.error('Failed to change status:', error);
-      message.error('Failed to change status');
+      // message.error('Failed to change status');
     }
   };
  
@@ -746,11 +979,7 @@ const ProfileCard = ({ profile, fetchData }) => {  // Remove fetchData from prop
       dataIndex: 'experience',
       key: 'experience',
       render: text => `${text} years`,
-      sorter :(a, b) => {
-        const expA = a.experienc
-        const expB = b.experience
-        return expA - expB
-      }
+      sorter :(a, b) => a.experience - b.experience
     },
     {
       title: 'Job Role',
@@ -790,11 +1019,7 @@ const ProfileCard = ({ profile, fetchData }) => {  // Remove fetchData from prop
       dataIndex: 'status',
       key: 'status',
       render: text => text === "NOT_ASSIGNED" ? "Not Assigned" : "On Hold",
-      sorter: (a, b) => {
-        const statusA = a.status
-        const statusB = b.status
-        return statusA.localeCompare(statusB);
-      },
+      sorter: (a, b) => a.status.localeCompare(b.status),
     }
   ];
  

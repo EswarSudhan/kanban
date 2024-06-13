@@ -110,7 +110,7 @@ export default function Meeting({ onSave, prevData }) {
         }
         try {
             const response = await axios.post(
-                "https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/createMeeting/", meeting,
+                "https://hireflowapi.focusrtech.com:90/hiring/entryLevel/createMeeting/", meeting,
                 {
                     headers: {
                         "Content-Type": "application/json",

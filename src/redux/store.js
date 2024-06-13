@@ -1,12 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch as useAppDispatch, useSelector as useAppSelector } from 'react-redux';
-import { persistStore, persistReducer } from 'redux-persist';
-import {  rootReducer } from './rootReducer';
-
-// ----------------------------------------------------------------------
+import { persistStore } from 'redux-persist';
+import { reducers as rootReducer } from './rootReducer';
 
 const store = configureStore({
-  devTools:true,
+  devTools: true,
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

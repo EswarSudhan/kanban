@@ -12,7 +12,7 @@ export const getWebJobs = createAsyncThunk(
             }
         };
 
-        const request = await axios.get('https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/postJob', config);
+        const request = await axios.get('https://hireflowapi.focusrtech.com:90/hiring/entryLevel/postJob', config);
         const response = request.data;
         return response;
     }
@@ -27,7 +27,7 @@ export const postJobs = createAsyncThunk(
                 Authorization: `Bearer ${accessToken}`
             }
         };
-        const request = await axios.post('https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/postJob', jobDetails, config);
+        const request = await axios.post('https://hireflowapi.focusrtech.com:90/hiring/entryLevel/postJob', jobDetails, config);
         const response = request.data;
 
         return response;

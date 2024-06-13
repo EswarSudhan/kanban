@@ -19,7 +19,7 @@
 
 //     const handleAssignConfirmation = async () => {
 //         try {
-//             const apiUrl = "https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/assignRole/";
+//             const apiUrl = "https://hireflowapi.focusrtech.com:90/hiring/entryLevel/assignRole/";
 //             const response = await axios.post(apiUrl);
 //             fetchData();
 //             notification.success({
@@ -39,7 +39,7 @@
 //     const fetchData = async () => {
 //         const token = localStorage.getItem('accessToken');
 //         try {
-//             const response = await axios.get('https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/getAllCandidates', {
+//             const response = await axios.get('https://hireflowapi.focusrtech.com:90/hiring/entryLevel/getAllCandidates', {
 //                 headers: {
 //                     Authorization: `Bearer ${token}`,
 //                 }
@@ -147,7 +147,7 @@
 
 //     const handleAssignConfirmation = async () => {
 //         try {
-//             const apiUrl = "https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/assignRole/";
+//             const apiUrl = "https://hireflowapi.focusrtech.com:90/hiring/entryLevel/assignRole/";
 //             const response = await axios.post(apiUrl);
 //             fetchData();
 //             notification.success({
@@ -167,7 +167,7 @@
 //     const fetchData = async () => {
 //         const token = localStorage.getItem('accessToken');
 //         try {
-//             const response = await axios.get('https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/getAllCandidates', {
+//             const response = await axios.get('https://hireflowapi.focusrtech.com:90/hiring/entryLevel/getAllCandidates', {
 //                 headers: {
 //                     Authorization: `Bearer ${token}`,
 //                 }
@@ -279,7 +279,7 @@
 
 //     const handleAssignConfirmation = async () => {
 //         try {
-//             const apiUrl = "https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/assignRole/";
+//             const apiUrl = "https://hireflowapi.focusrtech.com:90/hiring/entryLevel/assignRole/";
 //             const response = await axios.post(apiUrl);
 //             fetchData();
 //             notification.success({
@@ -299,7 +299,7 @@
 //     const fetchData = async () => {
 //         const token = localStorage.getItem('accessToken');
 //         try {
-//             const response = await axios.get('https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/getAllCandidates', {
+//             const response = await axios.get('https://hireflowapi.focusrtech.com:90/hiring/entryLevel/getAllCandidates', {
 //                 headers: {
 //                     Authorization: `Bearer ${token}`,
 //                 }
@@ -386,6 +386,7 @@
 // }
 
 
+
 import React, { useEffect, useState } from "react";
 import Usernav from "./Usernav";
 import { Stats } from "./NewCandidateStat";
@@ -394,6 +395,8 @@ import FilterPopup from "./NewCandidateFilter";
 import './NewCandidateAdmin.css';
 import axios from "axios";
 import { notification, Modal, Input, Button } from "antd";
+import { useSelector, useDispatch } from '../../redux/store'; // Import from the correct location
+import { setExampleState, clearExampleState } from '../../redux/slices/newCanSlice';
  
 export function Newcandidate() {
     const [showFilterModal, setShowFilterModal] = useState(false);
@@ -401,6 +404,8 @@ export function Newcandidate() {
     const [profileData, setProfileData] = useState([]);
     const [assignModalVisible, setAssignModalVisible] = useState(false);
     const [searchValue, setSearchValue] = useState("");
+
+    const exampleState = useSelector((state) => state.example.exampleState);
  
     const handleAssignClick = async () => {
         setAssignModalVisible(true);
@@ -408,7 +413,7 @@ export function Newcandidate() {
  
     const handleAssignConfirmation = async () => {
         try {
-            const apiUrl = "https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/assignRole/";
+            const apiUrl = "https://hireflowapi.focusrtech.com:90/hiring/entryLevel/assignRole/";
             const response = await axios.post(apiUrl);
             fetchData();
             notification.success({
@@ -428,7 +433,7 @@ export function Newcandidate() {
     const fetchData = async () => {
         const token = localStorage.getItem('accessToken');
         try {
-            const response = await axios.get('https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/getAllCandidates', {
+            const response = await axios.get('https://hireflowapi.focusrtech.com:90/hiring/entryLevel/getAllCandidates', {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 }
@@ -450,7 +455,7 @@ export function Newcandidate() {
  
     useEffect(() => {
         fetchData();
-    }, []);  // Empty dependencies array ensures fetchData is called once when the component mounts
+    }, [exampleState]);  // Empty dependencies array ensures fetchData is called once when the component mounts
  
     const toggleFilterModal = () => {
         setShowFilterModal(!showFilterModal);

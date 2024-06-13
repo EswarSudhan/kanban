@@ -98,7 +98,7 @@ const Login = () => {
   const handleSubmit = async () => {
     try {
       const response = await axios.post(
-        "https://hireflowapidev.focusrtech.com:90/hiring/auth/signin/",
+        "https://hireflowapi.focusrtech.com:90/hiring/auth/signin/",
         {
           username: formik.values.username,
           password: formik.values.password

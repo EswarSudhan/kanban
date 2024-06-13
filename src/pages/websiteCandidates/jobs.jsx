@@ -12,10 +12,10 @@ import EditJobForm from './editJob';
 import { PlusOutlined, UserDeleteOutlined, EditOutlined, SearchOutlined } from '@ant-design/icons';
 import moment from 'moment';
 import clearFilterPng from '../clear-filter.png';
-
+ 
 const { Search } = Input;
 const { TextArea } = Input;
-
+ 
 const Jobs = () => {
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -27,10 +27,10 @@ const Jobs = () => {
   const [tempRoleFilter, setTempRoleFilter] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const dispatch = useDispatch();
-
+ 
   const { jobDetails, isLoading, error } = useSelector((state) => state.webcandidate);
   const [messageApi, contextHolder] = message.useMessage();
-
+ 
   const errorMessage = (message) => {
     messageApi.open({
       type: 'error',
@@ -43,18 +43,18 @@ const Jobs = () => {
       content: message,
     });
   };
-
+ 
   const successMessage = (message) => {
     messageApi.open({
       type: 'success',
       content: message,
     });
   };
-
+ 
   const showModal = () => {
     setIsModalOpen(!isModalOpen);
   };
-
+ 
   const showeditModal = (param) => {
     if (selectedRowId) {
       setIsEditModalOpen(!iseditModalOpen);
@@ -66,7 +66,7 @@ const Jobs = () => {
       warningMessage("Please select job to Edit");
     }
   };
-
+ 
   const deleteJob = () => {
     console.log("delete button clicked")
     if (selectedRowId) {
@@ -76,7 +76,7 @@ const Jobs = () => {
           Authorization: `Bearer ${accessToken}`
         }
       };
-      selectedRows && axios.delete(`https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/postJob/${selectedRows.id}`, config)
+      selectedRows && axios.delete(`https://hireflowapi.focusrtech.com:90/hiring/entryLevel/postJob/${selectedRows.id}`, config)
         .then(response => {
           console.log('Deleted Successfully');
           setJobCreated(!jobCreated);
@@ -89,8 +89,8 @@ const Jobs = () => {
     else {
       warningMessage("Please select job to Edit");
     }
-
-
+ 
+ 
   };
   const [dataSource, setDataSource] = useState([]);
   const dataSourceDuplicate = [
@@ -130,7 +130,7 @@ const Jobs = () => {
       experience: '10'
     }
   ];
-
+ 
   useEffect(() => {
     const fetchData = () => {
       const accessToken = localStorage.getItem('accessToken');
@@ -139,8 +139,8 @@ const Jobs = () => {
           Authorization: `Bearer ${accessToken}`
         }
       };
-
-      axios.get('https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/postJob', config)
+ 
+      axios.get('https://hireflowapi.focusrtech.com:90/hiring/entryLevel/postJob', config)
         .then(response => {
           setDataSource(response.data);
         })
@@ -148,29 +148,29 @@ const Jobs = () => {
           console.error('Error fetching data:', error);
         });
     };
-
+ 
     fetchData();
-
+ 
     console.log('datasource', dataSource);
-
+ 
   }, [jobCreated]);
-
+ 
   const handleRoleFilterChange = (checkedValues) => {
     setTempRoleFilter(checkedValues);
   };
-
+ 
   const applyRoleFilter = () => {
     setRoleFilter(tempRoleFilter);
     setIsDropdownVisible(false);
   };
-
+ 
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
-
+ 
   const filteredDataSource = dataSource.filter((item) =>
     (roleFilter.length === 0 || roleFilter.includes(item.jobTitle)) &&
     Object.values(item).join(" ").toLowerCase().includes(searchValue.toLowerCase())
   );
-
+ 
   const roleMenu = (
     <div onClick={(e) => e.stopPropagation()} className="dropdown-content">
       <Checkbox.Group onChange={handleRoleFilterChange} defaultValue={roleFilter}>
@@ -187,12 +187,12 @@ const Jobs = () => {
       </Button>
     </div>
   );
-
+ 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setSelectedRows({ ...selectedRows, [name]: value });
   };
-
+ 
   const columns = [
     {
       title: 'Job Id',
@@ -211,6 +211,7 @@ const Jobs = () => {
       title: 'Role',
       dataIndex: 'jobTitle',
       key: 'role',
+      sorter: (a, b) => a.jobTitle.localeCompare(b.jobTitle),
       onCell: (record) => ({
         onClick: () => {
           console.log('record here', record)
@@ -223,7 +224,7 @@ const Jobs = () => {
       title: 'Creation Date',
       dataIndex: 'jobCreationDate',
       key: 'creationDate',
-      sorter: (a, b) => moment(a.creationDate, 'DD-MM-YYYY') - moment(b.creationDate, 'DD-MM-YYYY'),
+      sorter: (a, b) => moment(a.jobCreationDate, 'DD-MM-YYYY') - moment(b.jobCreationDate, 'DD-MM-YYYY'),
       onCell: (record) => ({
         onClick: () => {
           console.log('record here', record)
@@ -259,7 +260,7 @@ const Jobs = () => {
       })
     },
   ];
-
+ 
   const rowSelection = {
     onChange: (selectedRowKeys1, selectedRows1) => {
       console.log(`selectedRowKeys: ${selectedRowKeys1}`, 'selectedRows: ', selectedRows1);
@@ -272,11 +273,11 @@ const Jobs = () => {
       name: record.name,
     }),
   };
-
+ 
   const handleCheckboxClick = (e) => {
     e.stopPropagation();
   };
-
+ 
   const handleOk = () => {
     const payload = {
       jobTitle: selectedRows.jobTitle,
@@ -286,8 +287,8 @@ const Jobs = () => {
       expiryDate: selectedRows.expiryDate,
       isActive: true
     };
-
-    axios.put(`https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/postJob/${selectedRows.id}`, payload)
+ 
+    axios.put(`https://hireflowapi.focusrtech.com:90/hiring/entryLevel/postJob/${selectedRows.id}`, payload)
       .then(response => {
         console.log('Response:', response.data);
         showeditModal();
@@ -297,7 +298,7 @@ const Jobs = () => {
         console.error('Error updating job:', error);
       });
   };
-
+ 
   const handleDraft = () => {
     const payload = {
       jobTitle: selectedRows.jobTitle,
@@ -307,24 +308,24 @@ const Jobs = () => {
       expiryDate: selectedRows.expiryDate,
       isActive: false
     };
-
-    axios.put(`https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/postJob/${selectedRows.id}`, payload)
+ 
+    axios.put(`https://hireflowapi.focusrtech.com:90/hiring/entryLevel/postJob/${selectedRows.id}`, payload)
       .then(response => {
-
+ 
         setJobCreated(!jobCreated);
       })
       .catch(error => {
-
+ 
       })
       .finally(() => {
         showeditModal();
       });
   };
-
+ 
   const handleCancel=()=>{
     showeditModal();
   }
-
+ 
   return (
     <>
       <Usernav />
@@ -364,7 +365,7 @@ const Jobs = () => {
             )}
           </div>
         </div>
-
+ 
         <Divider />
         <div className='header-container'>
           <Button style={{ background: 'transparent', border: 'none', margin: '0 13px', cursor: 'pointer' }} onClick={showModal}><PlusOutlined /> Add Job</Button>
@@ -397,7 +398,7 @@ const Jobs = () => {
           okText="POST"
           cancelText="SAVE DRAFT"
           footer={null}
-
+ 
         >
           <div className="form-group">
             <div className="form-row">
@@ -470,5 +471,5 @@ const Jobs = () => {
     </>
   )
 }
-
+ 
 export default Jobs;

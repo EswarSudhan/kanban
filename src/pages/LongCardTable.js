@@ -98,7 +98,7 @@
 //   const handleSave = (record) => {
 //     const { resumeId, officeMailId, timeSheet, paysquare } = record;
 //     // Replace 'https://example.com/saveData' with your actual API endpoint
-//     axios.post('https://hireflowapidev.focusrtech.com:90/hiring/auth/updatefinaldata', {
+//     axios.post('https://hireflowapi.focusrtech.com:90/hiring/auth/updatefinaldata', {
 //       resumeId,
 //       officeMailId,
 //       timeSheet,
@@ -247,7 +247,7 @@
 //   const handleSave = (record) => {
 //     const { resumeId, officeMailId, timeSheet, paysquare } = record;
 //     // Replace 'https://example.com/saveData' with your actual API endpoint
-//     axios.post('https://hireflowapidev.focusrtech.com:90/hiring/auth/updatefinaldata', {
+//     axios.post('https://hireflowapi.focusrtech.com:90/hiring/auth/updatefinaldata', {
 //       resumeId,
 //       officeMailId,
 //       timeSheet,
@@ -304,8 +304,13 @@ function LongCardTable({ apiUrl, searchValue }) {
       title: <span style={{ padding: '15px', whiteSpace: 'nowrap' }}>RES-ID</span>,
       dataIndex: 'resumeId',
       key: 'resumeId',
-      sorter: (a, b) => a.resumeId - b.resumeId,
-      // render: text => <span style={{ padding: '15px', whiteSpace: 'nowrap' }}>{text}</span>,
+      render: text => <span style={{ padding: '15px', whiteSpace: 'nowrap' }}>{text}</span>,
+      sorter: (a, b) => {
+        // Extract numeric part of RES-ID (e.g., 2 from RES-2)
+        const resA = parseInt(a.resumeId.match(/\d+/)[0]);
+        const resB = parseInt(b.resumeId.match(/\d+/)[0]);
+        return resA - resB;
+      }
     },
     {
       title: <span style={{ padding: '15px', whiteSpace: 'nowrap' }}>Name</span>,
@@ -402,7 +407,7 @@ function LongCardTable({ apiUrl, searchValue }) {
   const handleSave = (record) => {
     const { resumeId, officeMailId, timeSheet, paysquare } = record;
     // Replace 'https://example.com/saveData' with your actual API endpoint
-    axios.post('https://hireflowapidev.focusrtech.com:90/hiring/auth/updatefinaldata', {
+    axios.post('https://hireflowapi.focusrtech.com:90/hiring/auth/updatefinaldata', {
       resumeId,
       officeMailId,
       timeSheet,
@@ -418,7 +423,7 @@ function LongCardTable({ apiUrl, searchValue }) {
  
   return (
     <div style={{width:"100%"}}>
-      <Table style={{width:"90%", }}  dataSource= {filtereddata} columns={columns} pagination={false} rowKey="resumeId" />
+      <Table style={{width:"90%", }}  dataSource={Array.isArray(filtereddata) ? filtereddata : []} columns={columns} pagination={false} rowKey="resumeId" />
     </div>
   );
 }

@@ -32,7 +32,7 @@ export default function Chats() {
       setSelectedUser({});
       setCurrentUser(user);
       setSpinFlag(true);
-      const apiUrl = "https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/getemail";
+      const apiUrl = "https://hireflowapi.focusrtech.com:90/hiring/entryLevel/getemail";
       const recruiterMail = localStorage.getItem("mail");
     
       const payload = {

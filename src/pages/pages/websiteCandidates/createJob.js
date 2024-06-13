@@ -54,7 +54,7 @@ const JobCreationForm = ({ isModalOpen, showModal, setJobCreated }) => {
       }
     };
 
-    axios.post('https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/postJob', data, config)
+    axios.post('https://hireflowapi.focusrtech.com:90/hiring/entryLevel/postJob', data, config)
       .then((response) => {
         console.log(response.data);
         setChangingState(!changingState);
@@ -93,7 +93,7 @@ const JobCreationForm = ({ isModalOpen, showModal, setJobCreated }) => {
       }
     };
 
-    axios.post('https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/postJob', data, config)
+    axios.post('https://hireflowapi.focusrtech.com:90/hiring/entryLevel/postJob', data, config)
       .then((response) => {
         console.log(response.data);
         setChangingState(!changingState);
@@ -120,7 +120,7 @@ const JobCreationForm = ({ isModalOpen, showModal, setJobCreated }) => {
   };
 
   const handlePullDraft = (item) => {
-    axios.get(`https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/pullDraft/${item}`)
+    axios.get(`https://hireflowapi.focusrtech.com:90/hiring/entryLevel/pullDraft/${item}`)
       .then(response => {
 
         setFormData(response.data);
@@ -133,7 +133,7 @@ const JobCreationForm = ({ isModalOpen, showModal, setJobCreated }) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    axios.get('https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/pullDraftLov')
+    axios.get('https://hireflowapi.focusrtech.com:90/hiring/entryLevel/pullDraftLov')
       .then(response => {
 
         setItems(response.data);

@@ -6,7 +6,7 @@ function MyPage() {
     <div className="container">
       <h1 className="pageTitle">Selected Candidates</h1>
       <LongCardTable
-        apiUrl="https://hireflowapidev.focusrtech.com:90/hiring/auth/getselectedCandidate"
+        apiUrl="https://hireflowapi.focusrtech.com:90/hiring/auth/getselectedCandidate"
         columns={['RES-ID', 'Name', 'HRR', 'Interviewers', 'finalRemarks']}
       />
       <style jsx>{`

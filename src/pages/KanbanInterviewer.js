@@ -246,7 +246,7 @@ export default function KanbanInterviewer() {
     console.log(selectedTask.resumeId);
     const resumeId = selectedTask.resumeId;
     try {
-      const response = await axios.get(`https://hireflowapidev.focusrtech.com:90/hiring/auth/downloadResume/${resumeId}`, {
+      const response = await axios.get(`https://hireflowapi.focusrtech.com:90/hiring/auth/downloadResume/${resumeId}`, {
         responseType: 'blob',
       });
       console.log(response.headers);
@@ -276,7 +276,7 @@ export default function KanbanInterviewer() {
       console.log('skills', skills.skills[index].id);
 
 
-      await axios.delete(`https://hireflowapidev.focusrtech.com:90/hiring/interviewer/deleteskill/${skills.skills[index].id}`, {
+      await axios.delete(`https://hireflowapi.focusrtech.com:90/hiring/interviewer/deleteskill/${skills.skills[index].id}`, {
         headers: {
           'Content-Type': 'application/json'
         },
