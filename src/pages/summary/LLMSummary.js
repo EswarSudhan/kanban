@@ -20,7 +20,7 @@ const LLMSummary = () => {
 
         setLoading(true);
 
-        axios.post('https://hireflowapi.focusrtech.com:90/hiring/auth/llmSearch', {
+        axios.post('https://hireflowapidev.focusrtech.com:90/hiring/auth/llmSearch', {
             query: searchQuery
         })
         .then(response => {

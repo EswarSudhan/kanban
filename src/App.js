@@ -17,7 +17,7 @@
 //       <Routes>
 //         <Route path="/" element={<Login />} />
 //         <Route path="/admin-page" element={<Usermanagement />} />
-//         <Route path="/kanban-recurit" element={<Kanban />} />
+//         <Route path="/kanban-recruit" element={<Kanban />} />
 //         <Route path="/kanban-Interviewer" element={<KanbanInterviewer />} />
 //         <Route path="/candidate" element={<Candidate />} />
 //         <Route path="/results-page" element={<ResultPage />} />
@@ -58,6 +58,7 @@ import CandidateAdmin from "./components/usermanagement/CandidatesDashboard";
 import MyPage from "./pages/selectedCandidates";
 import Jobs from "./pages/websiteCandidates/jobs";
 import WebCandidates from "./pages/websiteCandidates/websiteAppliedCandidates";
+import RVdashboard from "./pages/RVdashboard"
 
 const App = () => {
 
@@ -70,7 +71,7 @@ const App = () => {
         <Route path="/admin-summary" element={<CustomLayout><AdminSummary /></CustomLayout>} />
         <Route path="/admin-page" element={<CustomLayout><Usermanagement /></CustomLayout>} />
         
-        <Route path="/kanban-recurit" element={<CustomLayout><Kanban /></CustomLayout>} />
+        <Route path="/kanban-recruit" element={<CustomLayout><Kanban /></CustomLayout>} />
         <Route path="/kanban-Interviewer" element={<CustomLayout><KanbanInterviewer /></CustomLayout>} />
         <Route path="/candidate" element={<CustomLayout><Candidate /></CustomLayout>} />
         {/*<Route path="/results-page" element={<CustomLayout><ResultPage /></CustomLayout>} />*/}
@@ -87,6 +88,7 @@ const App = () => {
         <Route path="/resetPassword/:token" element={<ResetPassword/>} />
         <Route path="/candidatequery" element={<CustomLayout><Candidatequery/></CustomLayout>} />
         <Route path="/candidateadmin" element={<CustomLayout><CandidateAdmin/></CustomLayout>} />
+        <Route path="/recruit-dashboard" element={<CustomLayout><RVdashboard/></CustomLayout>}/>
         
         {/* Add more routes as needed */}
       <Route path= "/SelectedCandidates" element={<CustomLayout><MyPage/></CustomLayout>}/>

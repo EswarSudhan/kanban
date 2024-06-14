@@ -67,7 +67,7 @@ const Login = () => {
           navigate("/admin-page");
           break;
         case "ROLE_RECRUITER":
-          navigate("/kanban-recurit");
+          navigate("/kanban-recruit");
           break;
         case "ROLE_INTERVIEWER":
           navigate("/kanban-interviewer");
@@ -98,7 +98,7 @@ const Login = () => {
   const handleSubmit = async () => {
     try {
       const response = await axios.post(
-        "https://hireflowapi.focusrtech.com:90/hiring/auth/signin/",
+        "https://hireflowapidev.focusrtech.com:90/hiring/auth/signin/",
         {
           username: formik.values.username,
           password: formik.values.password
@@ -121,7 +121,7 @@ const Login = () => {
         });
       }
       else if(role==="ROLE_RECRUITER"){
-        navigate("/kanban-recurit");
+        navigate("/kanban-recruit");
         notification.success({
           message: "Login Successful",
           description: "You have successfully logged in.",
@@ -143,12 +143,12 @@ const Login = () => {
   }
  
   return (
-    <div className="Login">
+    <div className="Login1">
       <video autoPlay loop muted className="background-video" playsInline>
         <source src={imgurl1} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <div className="content">
+      <div className="content1">
         <div className="login-container">
           <div className="image-container">
             <img src={imgurl2} alt="Background" />

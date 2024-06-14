@@ -98,7 +98,7 @@
 //   const handleSave = (record) => {
 //     const { resumeId, officeMailId, timeSheet, paysquare } = record;
 //     // Replace 'https://example.com/saveData' with your actual API endpoint
-//     axios.post('https://hireflowapi.focusrtech.com:90/hiring/auth/updatefinaldata', {
+//     axios.post('https://hireflowapidev.focusrtech.com:90/hiring/auth/updatefinaldata', {
 //       resumeId,
 //       officeMailId,
 //       timeSheet,
@@ -247,7 +247,7 @@
 //   const handleSave = (record) => {
 //     const { resumeId, officeMailId, timeSheet, paysquare } = record;
 //     // Replace 'https://example.com/saveData' with your actual API endpoint
-//     axios.post('https://hireflowapi.focusrtech.com:90/hiring/auth/updatefinaldata', {
+//     axios.post('https://hireflowapidev.focusrtech.com:90/hiring/auth/updatefinaldata', {
 //       resumeId,
 //       officeMailId,
 //       timeSheet,
@@ -407,7 +407,7 @@ function LongCardTable({ apiUrl, searchValue }) {
   const handleSave = (record) => {
     const { resumeId, officeMailId, timeSheet, paysquare } = record;
     // Replace 'https://example.com/saveData' with your actual API endpoint
-    axios.post('https://hireflowapi.focusrtech.com:90/hiring/auth/updatefinaldata', {
+    axios.post('https://hireflowapidev.focusrtech.com:90/hiring/auth/updatefinaldata', {
       resumeId,
       officeMailId,
       timeSheet,

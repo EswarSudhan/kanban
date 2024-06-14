@@ -37,7 +37,7 @@ export const Item4 = ({selectedCandidates}) => {
     const dispatch = useDispatch();
     useEffect(() => {
         // Fetch the list of recruiters when the component mounts
-        axios.get('https://hireflowapi.focusrtech.com:90/hiring/auth/getListOfRecruiter/')
+        axios.get('https://hireflowapidev.focusrtech.com:90/hiring/auth/getListOfRecruiter/')
             .then(response => {
                 setRecruiters(response.data);
             })

@@ -1,5 +1,5 @@
 /* login.css */
-.Login {
+.Login1 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,14 +17,14 @@
   z-index: -1;
 }
 
-.content h1 {
+.content1 h1 {
   z-index: 1;
   font-size: 30px;
   color: rgb(12, 6, 6);
   margin-bottom: 5px; /* Adjusted margin to reduce the gap */
 }
 
-.content p {
+.content1 p {
   z-index: 1;
   text-align: right;
   padding-left: 200px;

@@ -31,7 +31,7 @@ const Techcontainer = ({ users, fetchData }) => {
 
     try {
       const response = await axios.get(
-        `https://hireflowapi.focusrtech.com:90/hiring/auth/statsofinterviewer/${empId}`
+        `https://hireflowapidev.focusrtech.com:90/hiring/auth/statsofinterviewer/${empId}`
       );
       setHrCount(response.data);
     } catch (error) {
@@ -57,7 +57,7 @@ const Techcontainer = ({ users, fetchData }) => {
   const handleEditSave = async () => {
     const id = selectedUser.id;
     try {
-      await axios.post(`https://hireflowapi.focusrtech.com:90/hiring/auth/updateUser/${id}/`, {
+      await axios.post(`https://hireflowapidev.focusrtech.com:90/hiring/auth/updateUser/${id}/`, {
        
         username: editUser.name,
         email: editUser.email,
@@ -82,7 +82,7 @@ const Techcontainer = ({ users, fetchData }) => {
     const id = selectedUser.id;
     try {
       await axios.put(
-        `https://hireflowapi.focusrtech.com:90/hiring/auth/activeInactiveUser/${id}`,
+        `https://hireflowapidev.focusrtech.com:90/hiring/auth/activeInactiveUser/${id}`,
         {
           is_active: !is_active,
         }

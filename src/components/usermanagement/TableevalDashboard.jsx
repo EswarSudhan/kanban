@@ -20,7 +20,7 @@ const CandidateStatusTable = () => {
   };
 
   useEffect(() => {
-    axios.get('https://hireflowapi.focusrtech.com:90/hiring/auth/getallcadidatesforevaluation')
+    axios.get('https://hireflowapidev.focusrtech.com:90/hiring/auth/getallcadidatesforevaluation')
       .then(response => {
         const completedCount = response.data.filter(candidate => candidate.currentStatus === 'COMPLETED').length;
         const onHoldCount = response.data.filter(candidate => candidate.currentStatus === 'ON_HOLD').length;

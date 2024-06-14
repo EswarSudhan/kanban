@@ -18,7 +18,7 @@ const Cannav = () => {
     const token = localStorage.getItem("accessToken");
     console.log("Token", token);
     axios
-      .get("https://hireflowapi.focusrtech.com:90/hiring/auth/getAllRoles", {
+      .get("https://hireflowapidev.focusrtech.com:90/hiring/auth/getAllRoles", {
         headers: {
           "Content-Type": "application/json",
           Authorization: "Bearer " + token,

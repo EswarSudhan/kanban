@@ -22,7 +22,7 @@ export const Stats = () => {
  
         const fetchData = async () => {
             try {
-                const response = await axios.get('https://hireflowapi.focusrtech.com:90/hiring/auth/statisticsforadmin', {
+                const response = await axios.get('https://hireflowapidev.focusrtech.com:90/hiring/auth/statisticsforadmin', {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     }

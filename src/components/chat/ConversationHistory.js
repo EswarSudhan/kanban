@@ -32,7 +32,7 @@ export default function ConversationHistory({
 
   const sendMail = async (payload) => {
     const token = localStorage.getItem('accessToken');
-    const apiUrl = "https://hireflowapi.focusrtech.com:90/hiring/entryLevel/sendemail";
+    const apiUrl = "https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/sendemail";
 
     try {
       const response = await axios.post(apiUrl, payload, {

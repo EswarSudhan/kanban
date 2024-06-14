@@ -154,7 +154,7 @@ export default function Kanban() {
     console.log(selectedCard.resumeId);
     const resumeId = selectedCard.resumeId;
     try {
-      const response = await axios.get(`https://hireflowapi.focusrtech.com:90/hiring/auth/downloadResume/${resumeId}`, {
+      const response = await axios.get(`https://hireflowapidev.focusrtech.com:90/hiring/auth/downloadResume/${resumeId}`, {
         responseType: 'blob',
       });
       console.log(response.headers);
@@ -368,14 +368,14 @@ export default function Kanban() {
 
     // Additional validation for domainExperience and notificationPeriod
     if (fields.shortlistStatus == "SHORTLISTED") {
-      if (!/^\d+$/.test(fields.domainExperience)) {
-        errors.domainExperience = "Domain Experience should be a valid integer.";
-      }
+      // if (!/^\d+$/.test(fields.domainExperience)) {
+      //   errors.domainExperience = "Domain Experience should be a valid integer.";
+      // }
 
-      if (!/^\d+$/.test(fields.notificationPeriod)) {
-        errors.notificationPeriod =
-          "Notification Period should be a valid integer.";
-      }
+      // if (!/^\d+$/.test(fields.notificationPeriod)) {
+      //   errors.notificationPeriod =
+      //     "Notification Period should be a valid integer.";
+      // }
 
       if (fields.referenceEmail) {
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.referenceEmail)) {
@@ -485,7 +485,7 @@ export default function Kanban() {
     if (!selectedCard.interviewerorder.includes(selectedCard.interviewer[selectedCard.interviewer.length - 1])) {
       selectedCard.interviewerorder.push(selectedCard.interviewer[selectedCard.interviewer.length - 1])
     }
-    axios.put(`https://hireflowapi.focusrtech.com:90/hiring/entryLevel/updatedata/${resumeId}/`, selectedCard, {
+    axios.put(`https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/updatedata/${resumeId}/`, selectedCard, {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -684,6 +684,7 @@ export default function Kanban() {
                 display: "grid",
                 gap: "10px",
                 gridTemplateColumns: "1fr 1fr",
+                marginTop:"20px"
               }}
             >
               {/* <Typography>Name: {selectedCard.name}</Typography> */}
@@ -692,6 +693,7 @@ export default function Kanban() {
               <Typography>Resume Score: {selectedCard.resumeScore}</Typography>
               <Typography>Current Status: {selectedCard.currentStatus}</Typography>
               <Tooltip title="Name">
+              <Typography>Name:</Typography>
                 <Input
                   placeholder="Name"
                   value={selectedCard.name}
@@ -702,6 +704,7 @@ export default function Kanban() {
                 />
               </Tooltip>
               <Tooltip title="Email">
+              <Typography>Email:</Typography>
                 <Input
                   placeholder="Email"
                   value={selectedCard.email}
@@ -715,6 +718,7 @@ export default function Kanban() {
 
 
               <Tooltip title="Location">
+              <Typography>Location:</Typography>
                 <Input
                   placeholder="Location"
                   value={selectedCard.location}
@@ -726,6 +730,7 @@ export default function Kanban() {
 
               </Tooltip>
               <Tooltip title="Job Role">
+              <Typography>Job Role:</Typography>
                 <Select
                   placeholder="Job Role"
                   value={selectedCard.jobRole}
@@ -748,6 +753,7 @@ export default function Kanban() {
               </Tooltip>
 
               <Tooltip title="Qualification">
+              <Typography>Qualification:</Typography>
                 <Input
                   placeholder="Qualification"
                   value={selectedCard.qualification}
@@ -761,6 +767,7 @@ export default function Kanban() {
                 />
               </Tooltip>
               <Tooltip title="Total Experience">
+              <Typography>Total Experience:</Typography>
                 <Input
                   placeholder="Total Experience"
                   value={selectedCard.yearsOfExperience}
@@ -774,6 +781,7 @@ export default function Kanban() {
                 />
               </Tooltip>
               <Tooltip title="Candidate's Domain Experience">
+              <Typography>Candidate's Domain Experience:</Typography>
                 <Input
                   placeholder="Candidate's Domain Experience"
                   value={selectedCard.domainExperience}
@@ -813,6 +821,7 @@ export default function Kanban() {
                 />
               </Tooltip> */}
               <Tooltip title="phoneNo">
+              <Typography>phoneNo:</Typography>
                 <Input
                   placeholder="phoneNo"
                   value={selectedCard.phoneNo}
@@ -826,6 +835,7 @@ export default function Kanban() {
                 />
               </Tooltip>
               <Tooltip title="Reason">
+              <Typography>Reason:</Typography>
                 <Input
                   placeholder="Reason"
                   value={selectedCard.reason}
@@ -839,6 +849,7 @@ export default function Kanban() {
                 />
               </Tooltip>
               <Tooltip title="Travel">
+              <Typography>Travel:</Typography>
                 <Input
                   placeholder="Travel"
                   value={selectedCard.travelConstraint}
@@ -853,6 +864,7 @@ export default function Kanban() {
                 />
               </Tooltip>
               <Tooltip title="Reference">
+              <Typography>Reference:</Typography>
                 <Input
                   placeholder="Reference"
                   value={selectedCard.referenceName}
@@ -866,6 +878,7 @@ export default function Kanban() {
                 />
               </Tooltip>
               <Tooltip title="Reference Email">
+              <Typography>Reference Email:</Typography>
                 <Input
                   placeholder="Reference Email"
                   value={selectedCard.referenceEmail}
@@ -879,6 +892,7 @@ export default function Kanban() {
                 />
               </Tooltip>
               <Tooltip title="Notice Period">
+              <Typography>Notice Period:</Typography>
                 <Input
                   placeholder="Notice Period"
                   value={selectedCard.notificationPeriod}
@@ -892,6 +906,7 @@ export default function Kanban() {
                 />
               </Tooltip>
               <Tooltip title="Father Occupation">
+              <Typography>Father Occupation:</Typography>
                 <Input
                   placeholder="Father Occupation"
                   value={selectedCard.fatherOccupation}
@@ -905,6 +920,7 @@ export default function Kanban() {
                 />
               </Tooltip>
               <Tooltip title="Mother Occupation">
+              <Typography>Mother Occupation:</Typography>
                 <Input
                   placeholder="Mother Occupation"
                   value={selectedCard.motherOccupation}
@@ -918,6 +934,7 @@ export default function Kanban() {
                 />
               </Tooltip>
               <Tooltip title="Shortlist Status">
+              <Typography>Shortlist Status:</Typography>
                 <Select
                   placeholder="Shortlist Status"
                   value={selectedCard.shortlistStatus}

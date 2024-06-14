@@ -49,7 +49,7 @@ const WebCandidates = () => {
         console.log(resumeId);
 
         try {
-            const response = await axios.get(`https://hireflowapi.focusrtech.com:90/hiring/auth/downloadResume/${resumeId}`, {
+            const response = await axios.get(`https://hireflowapidev.focusrtech.com:90/hiring/auth/downloadResume/${resumeId}`, {
                 responseType: 'blob',
             });
             console.log(response.headers);
@@ -76,7 +76,7 @@ const WebCandidates = () => {
                 Authorization: `Bearer ${accessToken}`
             }
         };
-        axios.get(`https://hireflowapi.focusrtech.com:90/hiring/entryLevel/applyJob/${jobId}`, config)
+        axios.get(`https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/applyJob/${jobId}`, config)
             .then(response => {
                 const fetchedCandidates = response.data.map(candidate => ({
                     key: candidate.resumeId,
@@ -157,7 +157,7 @@ const WebCandidates = () => {
     };
 
     const handleAssign = () => {
-        const apiUrl = "https://hireflowapi.focusrtech.com:90/hiring/entryLevel/assignRole/";
+        const apiUrl = "https://hireflowapidev.focusrtech.com:90/hiring/entryLevel/assignRole/";
 
         axios.post(apiUrl)
             .then(response => {
@@ -178,7 +178,7 @@ const WebCandidates = () => {
 
         // Dispatch the async thunk action to update the data
         const updateAdminCandidateData = (requestData) => {
-            axios.post(`https://hireflowapi.focusrtech.com:90/hiring/auth/updatedataadmin/${requestData.resumeId}`, requestData)
+            axios.post(`https://hireflowapidev.focusrtech.com:90/hiring/auth/updatedataadmin/${requestData.resumeId}`, requestData)
                 .then((response) => {
                     console.log('Candidate data updated successfully:', response.data);
                     successMessage("Candidate Rejected !");
@@ -201,7 +201,7 @@ const WebCandidates = () => {
 
         // Dispatch the async thunk action to update the data
         const updateAdminCandidateData = (requestData) => {
-            axios.post(`https://hireflowapi.focusrtech.com:90/hiring/auth/updatedataadmin/${requestData.resumeId}`, requestData)
+            axios.post(`https://hireflowapidev.focusrtech.com:90/hiring/auth/updatedataadmin/${requestData.resumeId}`, requestData)
                 .then((response) => {
                     console.log('Candidate data updated successfully:', response.data);
                     successMessage("Candidate Holded !");

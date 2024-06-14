@@ -95,7 +95,7 @@ const TechSummary = () => {
     console.log(record.resumeId);
     const resumeId = record.resumeId;
     try {
-      const response = await axios.get(`https://hireflowapi.focusrtech.com:90/hiring/auth/downloadResume/${resumeId}`, {
+      const response = await axios.get(`https://hireflowapidev.focusrtech.com:90/hiring/auth/downloadResume/${resumeId}`, {
         responseType: 'blob',
       });
       console.log(response.headers);
